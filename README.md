@@ -1,4 +1,4 @@
-# WarehouseInsightsDashboard
+# Warehouse Insights Dashboard
 March 2025 Analysis: Fulfillment, Errors and Productivity
 
 Project Overview
@@ -45,9 +45,12 @@ Order Weekday = FORMAT([Order Time], "dddd")
 
 Measures:
 - Avg Fulfillment (Mins): Calculates the average fulfillment time across all orders.
-Avg_Fulfillment (Mins) = AVERAGE('fulfillment_data_xls'[Fulfillment Time (mins)])
-- Employee Quality Score (%): Evaluates quality scores for employees as percentages.
-Employee Quality Score (%) = AVERAGEX(VALUES('fulfillment_data_xls'[Employee ID]), 100 - [Employee Quality Score])
+
+  Avg_Fulfillment (Mins) = AVERAGE('fulfillment_data_xls'[Fulfillment Time (mins)])
+
+- Employee Quality Score (%): Evaluates quality scores for employees as percentages.
+
+   Employee Quality Score (%) = AVERAGEX(VALUES('fulfillment_data_xls'[Employee ID]), 100 - [Employee Quality Score])
 
 3. Power BI Dashboard
 The Power BI dashboard contains:
