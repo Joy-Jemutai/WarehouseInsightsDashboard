@@ -1,6 +1,8 @@
 # WarehouseInsightsDashboard
 March 2025 Analysis: Fulfillment, Errors and Productivity
+
 Project Overview
+
 This project presents a dynamic Power BI dashboard designed to analyze and optimize warehouse performance. The data spans March 1st to March 31st, 2025, and covers key metrics like fulfillment time, error rates, and employee productivity. Insights drawn from this analysis aim to improve operational efficiency and reduce error occurrences.
 
 Purpose
@@ -11,24 +13,27 @@ The dashboard aims to:
 
 Components
 1. SQL Query
-The raw data for March 2025 was retrieved using SQL. The query filtered data based on the timeframe and aggregated necessary metrics such as fulfillment times, error types, and employee scores.
-SQL Query Example:
+The raw data for March 2025 was retrieved using SQL.
 
 SELECT 
-    OrderID,                    -- Unique identifier for each order
-    OrderDate,                  -- Date when the order was placed
-    FulfillmentTime (mins),     -- Time taken to fulfill the order in minutes
-    ErrorType,                  -- Type of error associated with the order
-    ProductCategory,            -- Category of the product in the order
-    EmployeeID,                 -- Identifier for the employee handling the order
-    EmployeeQualityScore        -- Quality score of the employee handling the order
+
+    OrderID,                   
+    OrderDate,                 
+    FulfillmentTime (mins),     
+    ErrorType,                  
+    ProductCategory,           
+    EmployeeID,                 
+    EmployeeQualityScore        
 FROM 
-    warehouse_data               -- Source table containing warehouse data
+
+    warehouse_data               
 WHERE 
-    OrderDate BETWEEN '2025-03-01' AND '2025-03-31'  -- Filter for orders within March 2025
+    
+    OrderDate BETWEEN '2025-03-01' AND '2025-03-31'  
 
 2. DAX Queries
 Several DAX queries were created to calculate KPIs and generate visuals. Examples include:
+
 Calculated Columns:
 - Hour: Extracts the hour from order time for time-based analysis.
 Hour = HOUR('fulfillment_data_xls'[Order Time])
@@ -64,9 +69,6 @@ Recommendations:
 - Optimize staffing and workflow during peak error hours (0th hour and 16th hour).
 - Implement strategies to address top error types, such as improving labeling processes and reducing mis-picks.
 - Provide tailored training for error-prone employees to enhance accuracy.
-
-Visuals
-Screenshots of the dashboard are available in the Visuals folder for reference.
 
 Contributing
 Suggestions and feedback are always welcome! Feel free to open an issue or submit a pull request to contribute to this project.
